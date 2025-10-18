@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Bin Waste Segregation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #56ab2f, #a8e063);
+      color: white;
+      text-align: center;
+      animation: backgroundShift 10s infinite alternate;
+    }
+
+    @keyframes backgroundShift {
+      from { background-position: 0% 50%; }
+      to { background-position: 100% 50%; }
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-size: 2.5em;
+      text-shadow: 2px 2px #333;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      width: 250px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      animation: pulse 2s infinite;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 15px rgba(255,255,255,0.2); }
+      50% { box-shadow: 0 0 30px rgba(255,255,255,0.6); }
+      100% { box-shadow: 0 0 15px rgba(255,255,255,0.2); }
+    }
+
+    .value {
+      font-size: 3em;
+      margin-top: 10px;
+    }
+
+    .label {
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: #ffe;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌿 Smart Bin Waste Segregation System 🗑️</h1>
+  <div class="container">
+    <div class="card">
+      <div class="label">Organic Waste (Field 1)</div>
+      <div id="organic" class="value">--</div>
+    </div>
+    <div class="card">
+      <div class="label">Inorganic Waste (Field 2)</div>
+      <div id="inorganic" class="value">--</div>
+    </div>
+  </div>
+
+  <footer>
+    Auto-refreshes every 5 seconds | Powered by ThingSpeak Channel 670492
+  </footer>
+
+  <script>
+    async function fetchData() {
+      const url = 'https://api.thingspeak.com/channels/670492/feeds.json?results=1';
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const lastFeed = data.feeds[0];
+        document.getElementById('organic').textContent = lastFeed.field1 || '0';
+        document.getElementById('inorganic').textContent = lastFeed.field2 || '0';
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+
+    setInterval(fetchData, 5000);
+    fetchData(); // Initial call
+  </script>
+</body>
+</html>
