@@ -71,7 +71,7 @@ The system follows a modular approach:
 ## Screenshots
 
 **Circuit Connection**
-<img width="774" height="564" alt="circuit png" src="https://github.com/user-attachments/assets/f5234664-38fa-4307-bced-4aa7a7305c34" />
+<img width="774" height="564" alt="circuit png" title="Circuit connection" src="https://github.com/user-attachments/assets/f5234664-38fa-4307-bced-4aa7a7305c34" />
 
 
 **Top-view of Model**
