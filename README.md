@@ -1,6 +1,4 @@
-Here’s a concise and professional **README** for your GitHub repository based on the project details you shared. It’s structured, clear, and ready to use:
 
----
 
 # Smart Disposable Bin - IoT-based Waste Management System
 
@@ -80,15 +78,6 @@ The system follows a modular approach:
 
 **Dashboard Interface**
 ![Dashboard](screenshots/dashboard.png)
-
----
-
-## Future Work
-
-* Integration with AI-based waste recognition
-* Mobile push notifications for multiple users
-* Smart routing for waste collection based on fill levels
-* Energy-efficient hardware optimization
 
 ---
 
