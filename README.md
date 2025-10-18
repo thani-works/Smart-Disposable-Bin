@@ -70,15 +70,17 @@ The system follows a modular approach:
 
 ## Screenshots
 
-**Circuit Connection**
+
 <img width="774" height="564" alt="circuit png" title="Circuit connection" src="https://github.com/user-attachments/assets/f5234664-38fa-4307-bced-4aa7a7305c34" />
 
 
-**Top-view of Model**
-![Model](screenshots/model.png)
 
-**Dashboard Interface**
-![Dashboard](screenshots/dashboard.png)
+<img width="698" height="424" title="Top view of Model"  src="https://github.com/user-attachments/assets/24d104df-5821-4417-81a6-f13be6538728" />
+
+
+
+<img width="692" height="287" alt="Screenshot 2025-10-18 203438" title="Dashboard Interface"  src="https://github.com/user-attachments/assets/0dd60b65-6bb0-4763-8616-b5bf1da8073a" />
+
 
 ---
 
